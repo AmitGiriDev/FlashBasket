@@ -1,11 +1,14 @@
 import dotenv from "dotenv";
 import fastify from "fastify";
+import { connectDB } from "./config/connect.js";
+
 dotenv.config();
 const PORT = 5000;
 
 const start = async () => {
   const app = fastify();
 
+  await connectDB(process.env.MONGO_URI);
   app.get("/", async function handler(request, reply) {
     return { hello: "world" };
   });
