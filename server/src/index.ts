@@ -3,7 +3,7 @@ import fastify from "fastify";
 import { connectDB } from "./config/connect.js";
 
 dotenv.config();
-const PORT = 5000;
+const PORT = 3000;
 
 const start = async () => {
   const app = fastify();
