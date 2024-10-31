@@ -38,3 +38,7 @@ export const admin = new AdminJS({
   },
   rootPath: "/admin",
 });
+
+export const buildAdmiRouter = async () => {
+  // await buildAuthenticatedRouter(admin);
+};
