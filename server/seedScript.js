@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-import { MONGO_URI } from "./src/config/config.ts";
-import Product from "./src/models/products.ts";
-import Category from "./src/models/category.ts";
-import { categories, products } from "./seedData.ts";
+import { MONGO_URI } from "./src/config/config.js";
+import Product from "./src/models/products.js";
+import Category from "./src/models/category.js";
+import { categories, products } from "./seedData.js";
 
 async function seedDatabase() {
   try {
@@ -14,7 +14,7 @@ async function seedDatabase() {
     console.log("CategoryDocs", CategoryDocs);
 
     const categoryMap = CategoryDocs.reduce((map, category) => {
-      map[category.name] = category?._id;
+      map[category.name] = category._id;
       return map;
     }, {});
 
@@ -25,9 +25,11 @@ async function seedDatabase() {
       category: categoryMap[product.category],
     }));
 
+    console.log("productWithCategoriesId", productWithCategoriesId);
     await Product.insertMany(productWithCategoriesId);
     console.log("DataBase seeded successfully😁✅");
   } catch (error) {
+    console.log(error);
   } finally {
     mongoose.connection.close();
   }

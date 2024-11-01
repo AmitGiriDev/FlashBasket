@@ -3,4 +3,4 @@ export const userTypeConstant = {
   Admin: "Admin",
   DeliveryPartner: "DeliveryPartner",
 };
-export type userType = "Customer" | "Admin" | "DeliveryPartner";
+// export type userType = "Customer" | "Admin" | "DeliveryPartner";

@@ -1,8 +1,8 @@
 import AdminJS from "adminjs";
 import * as AdminJSMongoos from "@adminjs/mongoose";
-import * as Models from "./../models/index.ts";
+import * as Models from "../models/index.js";
 import { buildAuthenticatedRouter } from "@adminjs/fastify";
-import { authenticate, COOKIE_PASSWORD, sessionStore } from "./config.ts";
+import { authenticate, COOKIE_PASSWORD, sessionStore } from "./config.js";
 import { dark, light, noSidebar } from "@adminjs/themes";
 
 AdminJS.registerAdapter(AdminJSMongoos);

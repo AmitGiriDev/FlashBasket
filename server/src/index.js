@@ -1,8 +1,8 @@
 import dotenv from "dotenv";
 import fastify from "fastify";
 import { connectDB } from "./config/connect.js";
-import { MONGO_URI, PORT } from "./config/config.ts";
-import { admin, buildAdmiRouter } from "./config/setup.ts";
+import { MONGO_URI, PORT } from "./config/config.js";
+import { admin, buildAdmiRouter } from "./config/setup.js";
 
 dotenv.config();
 

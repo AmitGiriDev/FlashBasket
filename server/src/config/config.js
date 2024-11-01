@@ -2,7 +2,7 @@ import "dotenv/config.js";
 import fastifySession from "@fastify/session";
 import ConnectMongoDBSession from "connect-mongodb-session";
 
-import { Admin } from "../models/user.ts";
+import { Admin } from "../models/user.js";
 import { Error } from "mongoose";
 
 const MongoDBStore = ConnectMongoDBSession(fastifySession);
@@ -12,11 +12,11 @@ export const sessionStore = new MongoDBStore({
   Collection: "session,",
 });
 
-sessionStore.on("error", (error: Error) => {
+sessionStore.on("error", (error) => {
   console.log(error);
 });
 
-export const authenticate = async (email: string, password: string) => {
+export const authenticate = async (email, password) => {
   if (email && password) {
     const user = await Admin.findOne({ email: email });
     if (!user) {
