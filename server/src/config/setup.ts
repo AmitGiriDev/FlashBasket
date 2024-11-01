@@ -33,10 +33,22 @@ export const admin = new AdminJS({
     {
       resource: Models.Branch,
     },
+    {
+      resource: Models.Product,
+    },
+    {
+      resource: Models.Category,
+    },
+    {
+      resource: Models.Order,
+    },
+    {
+      resource: Models.Counter,
+    },
   ],
   branding: {
     companyName: "FlashBasket",
-    withMadeWithLove: true,
+    withMadeWithLove: false,
     favicon:
       "https://res.cloudinary.com/dujkryeb8/image/upload/v1730358860/hd4vymky6qgphlxuxalp.webp",
     logo: "https://res.cloudinary.com/dujkryeb8/image/upload/v1730358860/hd4vymky6qgphlxuxalp.webp",
