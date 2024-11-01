@@ -3,6 +3,7 @@ import * as AdminJSMongoos from "@adminjs/mongoose";
 import * as Models from "./../models/index.ts";
 import { buildAuthenticatedRouter } from "@adminjs/fastify";
 import { authenticate, COOKIE_PASSWORD, sessionStore } from "./config.ts";
+import { dark, light, noSidebar } from "@adminjs/themes";
 
 AdminJS.registerAdapter(AdminJSMongoos);
 
@@ -36,7 +37,12 @@ export const admin = new AdminJS({
   branding: {
     companyName: "FlashBasket",
     withMadeWithLove: true,
+    favicon:
+      "https://res.cloudinary.com/dujkryeb8/image/upload/v1730358860/hd4vymky6qgphlxuxalp.webp",
+    logo: "https://res.cloudinary.com/dujkryeb8/image/upload/v1730358860/hd4vymky6qgphlxuxalp.webp",
   },
+  defaultTheme: dark.id,
+  availableThemes: [dark, light, noSidebar],
   rootPath: "/admin",
 });
 
