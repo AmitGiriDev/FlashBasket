@@ -1,13 +1,13 @@
 import dotenv from "dotenv";
 import fastify from "fastify";
 import { connectDB } from "./config/connect.js";
-import { PORT } from "./config/config.ts";
+import { MONGO_URI, PORT } from "./config/config.ts";
 import { admin, buildAdmiRouter } from "./config/setup.ts";
 
 dotenv.config();
 
 const start = async () => {
-  await connectDB(process.env.MONGO_URI || "");
+  await connectDB(MONGO_URI || "");
   const app = fastify();
 
   await buildAdmiRouter(app);
