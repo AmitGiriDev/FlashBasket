@@ -29,7 +29,7 @@ const customerSchema = new mongoose.Schema({
     default: "Customer",
   },
   liveLocation: {
-    latitue: { type: Number },
+    latitude: { type: Number },
     longitude: { type: Number },
   },
   address: {
@@ -48,7 +48,7 @@ const deliveryPartnerSchema = new mongoose.Schema({
     default: userTypeConstant.DeliveryPartner,
   },
   liveLocation: {
-    latitue: { type: Number },
+    latitude: { type: Number },
     longitude: { type: Number },
   },
   address: {

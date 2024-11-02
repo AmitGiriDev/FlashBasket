@@ -144,7 +144,7 @@ export const fetchUser = async (req, res) => {
     }
 
     if (!user) {
-      return res?.status(403).send({
+      return res?.status(404).send({
         message: "user not found",
       });
     }

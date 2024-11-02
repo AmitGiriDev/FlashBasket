@@ -20,36 +20,35 @@ const orderSchema = new mongoose.Schema({
   deliveryPartner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: tableName.DeliveryPartner,
-    required: true,
   },
   items: [
     {
       id: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: tableName.Product,
+        ref: "Products",
       },
       item: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: tableName.Product,
+        ref: "Products",
       },
       count: { type: Number, required: true },
     },
   ],
   deliveryLocation: {
-    lattitude: { type: Number, required: true },
+    latitude: { type: Number, required: true },
     longitude: { type: Number, required: true },
     address: { type: String },
   },
   pickupLocation: {
-    lattitude: { type: Number, required: true },
+    latitude: { type: Number, required: true },
     longitude: { type: Number, required: true },
     address: { type: String },
   },
   deliveryPartnerLocation: {
-    lattitude: { type: Number, required: true },
-    longitude: { type: Number, required: true },
+    latitude: { type: Number },
+    longitude: { type: Number },
     address: { type: String },
   },
   status: {

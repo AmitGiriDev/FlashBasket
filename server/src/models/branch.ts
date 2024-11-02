@@ -4,7 +4,7 @@ import { userTypeConstant } from "../types/index.ts";
 const branchSchema = new mongoose.Schema({
   name: { type: String, required: true },
   liveLocation: {
-    latitue: { type: Number },
+    latitude: { type: Number },
     longitude: { type: Number },
   },
   address: {
