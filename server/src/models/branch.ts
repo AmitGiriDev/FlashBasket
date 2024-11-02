@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { userTypeConstant } from "../types/index.ts";
-import { DeliveryPartner } from "./user.ts";
 
 const branchSchema = new mongoose.Schema({
   name: { type: String, required: true },

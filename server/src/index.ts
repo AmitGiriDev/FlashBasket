@@ -3,6 +3,7 @@ import fastify from "fastify";
 import { connectDB } from "./config/connect.js";
 import { MONGO_URI, PORT } from "./config/config.ts";
 import { admin, buildAdmiRouter } from "./config/setup.ts";
+import { registerRoutes } from "./routes/index.ts";
 
 dotenv.config();
 
@@ -12,9 +13,7 @@ const start = async () => {
 
   await buildAdmiRouter(app);
 
-  app.get("/", async function handler(request, reply) {
-    return { hello: "world" };
-  });
+  await registerRoutes(app);
 
   app.listen({ port: PORT, host: "0.0.0.0" }, (err, addr) => {
     if (err) {
