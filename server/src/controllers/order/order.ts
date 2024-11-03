@@ -77,7 +77,7 @@ export const confirmOrder = async (req, res) => {
       longitude: deliveryPartnerLocation.longitude,
       address: deliveryPartnerLocation.address || "",
     };
-
+    req.server.io.to(orderId).emit("orderConfirmed", order);
     await order.save();
     return res.send(order);
   } catch (error) {
@@ -122,6 +122,8 @@ export const updateOrderStatus = async (req, res) => {
 
     order.status = status;
     await order.save();
+    req.server.io.to(orderId).emit("liveTrackingUpdates", order);
+
     return res.send(order);
   } catch (error) {
     return res?.status(500).send({
