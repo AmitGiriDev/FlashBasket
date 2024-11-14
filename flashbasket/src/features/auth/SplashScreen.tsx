@@ -2,7 +2,8 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import React, {FC} from 'react';
 import {Colors} from '@utils/Constants';
 import {screeHeight, screeWidth} from '@utils/Scaling';
-import Logo from '@assets/images/splash_logo.jpeg';
+import Logo from '@assets/images/splash_logo-removebg-preview.png';
+
 const SplashScreen: FC = () => {
   return (
     <View style={styles.container}>
@@ -15,7 +16,7 @@ export default SplashScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.primary2,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
