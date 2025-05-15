@@ -111,10 +111,6 @@ const CustomerLogin: FC = () => {
                   },
                 ],
               }}>
-              <LinearGradient
-                colors={['red', 'black']}
-                style={styles.gradient}
-              />
               <View style={styles.content}>
                 <Image
                   source={require('@assets/images/flashBasketLogo.jpeg')}
