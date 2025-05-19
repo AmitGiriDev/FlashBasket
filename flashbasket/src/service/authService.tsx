@@ -25,6 +25,7 @@ export const refetchUser = async (setUser: any) => {
   try {
     const response = await appAxios.get('/user');
     setUser(response.data.user);
+    console.log(response);
   } catch (error) {
     console.log('error', error);
   }
@@ -62,5 +63,14 @@ export const deliverLogin = async (email: string, password: string) => {
     return accessToken;
   } catch (error) {
     console.log('error', error);
+  }
+};
+
+export const UpdateUserLocation = async (data: any, setuser: any) => {
+  try {
+    const res = await appAxios.patch('/user', data);
+    refetchUser(setuser);
+  } catch (error) {
+    console.error(error.message);
   }
 };
